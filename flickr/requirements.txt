@@ -1,0 +1,13 @@
+boto3
+bs4
+jsonmerge
+Pillow
+lxml
+pysftp
+pillow
+mysql.connector
+unidecode
+sqlalchemy
+requests
+pandas
+tabulate
