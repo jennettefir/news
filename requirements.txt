@@ -1,0 +1,11 @@
+fire>=0.1.3
+regex==2017.4.5
+requests==2.21.0
+tqdm
+toposort==1.5
+tokenizers==0.0.9
+h5py
+spacy>=2.3.1
+numpy
+sqlalchemy
+scrapy
