@@ -1,0 +1,20 @@
+FROM tensorflow/tensorflow:1.15.2-gpu-py3
+
+RUN apt-get install wget
+
+RUN pip3 install --no-cache-dir fastapi
+RUN pip3 install uvicorn
+
+RUN mkdir /gpt-2
+WORKDIR /gpt-2
+ADD . /gpt-2
+
+RUN pip3 install -r requirements.txt
+RUN chmod +x gdrive_download.sh
+
+RUN mkdir -p models/msr_twitter
+RUN cp -R model_msr_twitter_config/* models/msr_twitter/
+RUN ./gdrive_download.sh 1fEW0Vn0alPTGCLSZOIpMiUShqPUuy6RW models/msr_twitter/msr_twitter.hdf5
+
+EXPOSE 8000
+ENTRYPOINT ["uvicorn", "text_rewrite_api:app", "--host", "0.0.0.0"]

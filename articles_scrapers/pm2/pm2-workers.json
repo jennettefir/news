@@ -1,0 +1,12 @@
+{
+  "apps": [
+    {
+      "name": "nytimes_scraper",
+      "autorestart": false,
+      "script": "articles_scrapers/pm2/scripts/nytimes_scraper.sh",
+      "exec_interpreter": "/bin/bash",
+      "instances": 1,
+      "cron_restart": "*/15 * * * *"
+    }
+  ]
+}
